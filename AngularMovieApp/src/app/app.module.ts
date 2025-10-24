@@ -1,26 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { MovieCardComponent } from './movie-card/movie-card.component';
-import { HeaderComponent } from './header/header.component';
-import { FavoritesComponent } from './favorites/favorites.component';
-import { MovieSearchComponent } from './movie-search/movie-search.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { MovieSearchComponent } from './components/movie-search/movie-search.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { WatchlistComponent } from './components/watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovieCardComponent,
-    HeaderComponent,
-    FavoritesComponent,
     MovieSearchComponent,
-    NavigationComponent
+    SearchResultsComponent,
+    WatchlistComponent
+    // ... other components
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule // Required for ngModel in search component
   ],
   providers: [],
   bootstrap: [AppComponent]
