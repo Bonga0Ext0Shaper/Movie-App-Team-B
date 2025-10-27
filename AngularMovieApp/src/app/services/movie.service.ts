@@ -29,6 +29,9 @@ export class MovieService {
     { id: 20, title: "Toy Story", year: 1995, rating: 8.3, genre: "Animation" }
   ];
 
+  // Favorites array
+  private favorites: Movie[] = [];
+
   constructor() { }
 
   // Get all movies
@@ -57,5 +60,16 @@ export class MovieService {
   // Get movie by ID
   getMovieById(id: number): Movie | undefined {
     return this.moviesData.find(movie => movie.id === id);
+  }
+
+  // Add movie to favorites
+  addFavorite(movie: Movie): void {
+    this.favorites.push(movie);
+    console.log('Added to favorites:', movie);
+  }
+
+  // Get favorite movies
+  getFavorites(): Movie[] {
+    return this.favorites;
   }
 }
